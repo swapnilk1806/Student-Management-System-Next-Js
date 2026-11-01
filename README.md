@@ -1,36 +1,169 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 Student Management System
 
-## Getting Started
+A simple and responsive Student Management System built using **Next.js, TypeScript, Tailwind CSS, and MySQL**. This application allows users to manage student records through a clean and user-friendly interface.
 
-First, run the development server:
+## 🚀 Features
+
+- Add new student records
+- View all registered students
+- Update existing student information
+- Delete student records
+- Search students by name, email, or course
+- MySQL database integration
+- Responsive user interface
+- Form validation and error handling
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Next.js | Frontend and backend framework |
+| TypeScript | Type-safe development |
+| Tailwind CSS | Responsive styling |
+| MySQL | Database |
+| mysql2 | MySQL database connection |
+| REST API | CRUD operations |
+
+## 📁 Project Structure
+
+```text
+student-management/
+├── app/
+│   ├── api/
+│   │   └── students/
+│   │       ├── [id]/
+│   │       │   └── route.ts
+│   │       └── route.ts
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   └── StudentManager.tsx
+├── lib/
+│   ├── db.ts
+│   └── validation.ts
+├── public/
+├── .env.local
+├── .gitignore
+├── package.json
+└── README.md
+```
+
+## ⚙️ Installation and Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/swapnilk1806/Student-Management-System-Next-Js.git
+cd Student-Management-System-Next-Js
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure MySQL
+
+Make sure MySQL is installed and running on your system.
+
+Open MySQL Workbench or your MySQL terminal and execute:
+
+```sql
+CREATE DATABASE IF NOT EXISTS student_db;
+
+USE student_db;
+
+CREATE TABLE IF NOT EXISTS students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    course VARCHAR(100) NOT NULL,
+    age INT NOT NULL DEFAULT 18,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP
+);
+```
+
+### 4. Configure environment variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=student_db
+```
+
+Replace `your_mysql_password` with your local MySQL password.
+
+**Important:** Never upload your `.env.local` file or database credentials to GitHub.
+
+### 5. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔗 API Endpoints
 
-## Learn More
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/students` | Get all students |
+| GET | `/api/students/:id` | Get a student by ID |
+| POST | `/api/students` | Add a new student |
+| PUT | `/api/students/:id` | Update a student |
+| DELETE | `/api/students/:id` | Delete a student |
 
-To learn more about Next.js, take a look at the following resources:
+### Example Student Data
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+{
+  "name": "Rahul Patil",
+  "email": "rahul@example.com",
+  "course": "Computer Science",
+  "age": 22
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📸 Screenshots
 
-## Deploy on Vercel
+Add screenshots of your application here:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Student Management System Dashboard](screenshots/dashboard.png)
+
+### Add Student
+
+![Add Student Form](screenshots/add-student.png)
+
+### Student Records
+
+![Student Records Table](screenshots/student-records.png)
+
+## 👨‍💻 Author
+
+**Swapnil Kadam**
+
+- GitHub: [swapnilk1806](https://github.com/swapnilk1806)
+- Portfolio: [My Portfolio](https://swapnilk1806-portfolio.vercel.app/)
+- LeetCode: [swapnilk1806](https://leetcode.com/u/swapnilk1806/)
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+⭐ If you find this project useful, consider giving it a star on GitHub.
+
+**Thank you for visiting my project!**
