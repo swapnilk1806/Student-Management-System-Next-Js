@@ -127,29 +127,12 @@ http://localhost:3000
 
 ```json
 {
-  "name": "Rahul Patil",
-  "email": "rahul@example.com",
+  "name": "Swapnil Kadam",
+  "email": "swapnil@example.com",
   "course": "Computer Science",
   "age": 22
 }
 ```
-
-## 📸 Screenshots
-
-Add screenshots of your application here:
-
-### Dashboard
-
-![Student Management System Dashboard](screenshots/dashboard.png)
-
-### Add Student
-
-![Add Student Form](screenshots/add-student.png)
-
-### Student Records
-
-![Student Records Table](screenshots/student-records.png)
-
 ## 👨‍💻 Author
 
 **Swapnil Kadam**
